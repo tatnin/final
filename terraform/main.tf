@@ -1,13 +1,14 @@
+provider "aws" {
+  region = "us-east-1"
+}
+
 terraform {
   backend "s3" {
     bucket = "nt-s3"
     key    = "final/state.tfstate"
     region = "us-east-1"
+    dynamodb_table = "ntstatetf"
   }
-}
-
-provider "aws" {
-  region = "us-east-1"
 }
 
 resource "aws_ecr_repository" "nt-ecr" {
