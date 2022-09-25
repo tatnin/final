@@ -15,7 +15,7 @@ module "nt-eks-cluster" {
   source  = "terraform-aws-modules/eks/aws"
   version = "18.29.0"
 
-  cluster_name = "nt-eks-cluster-${var.environment}"
+  cluster_name = local.cluster_name
   cluster_version = "1.21"
 
   subnet_ids = module.nt-vpc.private_subnets
