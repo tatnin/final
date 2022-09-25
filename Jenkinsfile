@@ -40,7 +40,7 @@ pipeline {
     stage('Apply') {
       steps {
         dir("terraform") {
-          sh "terraform apply -input=false -no-color tfplan"
+          sh "terraform apply -input=false -no-color plantf"
         }
       }
     }
